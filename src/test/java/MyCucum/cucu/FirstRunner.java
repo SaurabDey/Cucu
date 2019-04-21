@@ -8,12 +8,17 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions
 (
-		features="FeatureFolder",
+		features="FeatureFolder/Negative.feature",
 		glue="MyCucum.cucu",
-		tags="@Regression",
+		//tags= {"@Saurab"},
 		plugin  = {"pretty:STDOUT","html:target/HTMLCucumberReport","json:target/Cucumber.json"}
 )
-public class RunnerClass
+public class FirstRunner
 {
 
+	/*
+	 * @Test public void f() {
+	 * 
+	 * }
+	 */
 }

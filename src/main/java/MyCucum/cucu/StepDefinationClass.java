@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -23,17 +24,21 @@ public class StepDefinationClass {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 
-	@When("^I provide username and password$")
+	@When("^I provide username$")
 	public void i_provide_username_and_password() throws Throwable {
 		WebElement userName = driver.findElement(By.id("user_login"));
 		userName.sendKeys("admin");
 
+	}
+	
+	@When("^I provide password$")
+	public void andMethod()
+	{
 		WebElement passWord = driver.findElement(By.id("user_pass"));
 		passWord.sendKeys("demo123");
 
 		WebElement loginButn = driver.findElement(By.id("wp-submit"));
 		loginButn.click();
-		;
 	}
 
 	@Then("^I should see the dashboard$")
